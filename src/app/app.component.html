@@ -1,9 +1,11 @@
 <div>
+  <img [src]="imgURL" alt="alt"/>
   <h1>{{say}}</h1>
   <h2>{{greet()}}</h2>
   <h3>{{say.toUpperCase()}}</h3>
   <h3>{{say.toLowerCase()}}</h3>
   <h3>{{add(10,20)}}</h3>
+  <input (keyup)="changeImage($event)" [value]="">
 </div>
 
 <router-outlet></router-outlet>
