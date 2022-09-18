@@ -1,3 +1,19 @@
+<ng-template [ngIf]="blueClass">
+  <h2>Button is Voilet. (Property Binding)</h2>
+</ng-template>
+
+<h3 *ngIf="!blueClass">Button is White. (Expression Binding)</h3>
+
+<button (click)="blueClass = !blueClass" [ngClass]="{blue: blueClass}" [ngStyle]="{ 'font-size.px' : fontSize}">
+  Change
+</button>
+<hr>
+<button (click)="blueClass = !blueClass" [ngClass]="{blue: blueClass}" [ngStyle]="{ 'font-size' : fontSize}">
+  Change (Click : Event Binding)
+</button>
+
+<hr>
+
 <div>
   <img [src]="imgURL" alt="alt" />
   <h1>{{say | titlecase}}</h1>
@@ -37,7 +53,11 @@
   <pre>{{pizza | json}}</pre>
   <pre><h3>{{pizza | json}}</h3></pre>
 </div>
-<app-post [img]="imgURL" (imgSelected)="logImg($event)"></app-post>
+
+<app-post *ngFor="let image of images; let i = index" 
+  [img]="image" (imgSelected)="logImg($event)" [index] = "i">
+  <h1>i some caption</h1>
+</app-post>
 
 <div>
   <h3>{{postComponentMessage}}</h3>

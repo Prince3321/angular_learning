@@ -13,6 +13,7 @@ export class PostComponent implements OnInit, OnChanges, DoCheck, AfterContentCh
 AfterContentInit, AfterViewChecked, AfterViewInit, OnDestroy {
 
   @Input('img') postImgURL = ''
+  @Input() index:number = 0;
   @Output() imgSelected = new EventEmitter<string>()
 
   constructor() {

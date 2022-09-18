@@ -20,6 +20,14 @@ export class AppComponent {
     toppings : ['Corn','Paneer'],
     size : 'large'
   }
+  blueClass = false
+  fontSize = 24
+
+  images = [
+    'https://picsum.photos/id/5/500/500',
+    'https://picsum.photos/id/6/500/500',
+    'https://picsum.photos/id/7/500/500'
+  ]
 
   greet() {
     return "Good Morning"
