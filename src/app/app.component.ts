@@ -10,6 +10,16 @@ export class AppComponent {
   say = "Hello World";
   alt = '';
   imgURL = 'https://picsum.photos/id/5/500/500'
+  postComponentMessage = ''
+  currentDate = new Date()
+  cost = 2000
+  INR = 'INR'
+  JPY = 'JPY'
+  temperature = 1
+  pizza = {
+    toppings : ['Corn','Paneer'],
+    size : 'large'
+  }
 
   greet() {
     return "Good Morning"
@@ -21,11 +31,17 @@ export class AppComponent {
 
   getImage() {
     this.alt = ''
-    this.imgURL = 'https://picsum.photos/id/237/200/300'
+    this.imgURL = 'https://picsum.photos/id/237/450/450'
   }
 
   changeImage(event: KeyboardEvent) {
     this.alt = ''
     this.imgURL = (event.target as HTMLInputElement).value
   }
+
+  logImg(event: string) {
+    this.postComponentMessage = event
+    console.log("event: ", event);
+  }
+
 }

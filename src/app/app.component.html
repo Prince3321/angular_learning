@@ -1,11 +1,49 @@
 <div>
-  <img [src]="imgURL" alt="alt"/>
-  <h1>{{say}}</h1>
+  <img [src]="imgURL" alt="alt" />
+  <h1>{{say | titlecase}}</h1>
+  <h1>{{say | uppercase}}</h1>
+  <h1>{{say | lowercase}}</h1>
   <h2>{{greet()}}</h2>
   <h3>{{say.toUpperCase()}}</h3>
   <h3>{{say.toLowerCase()}}</h3>
   <h3>{{add(10,20)}}</h3>
   <input (keyup)="changeImage($event)" [value]="">
 </div>
+<div>
+  <h2>{{currentDate}}</h2>
+  <h2>{{currentDate | date}}</h2>
+  <h2>{{currentDate | date : 'MMMM-dd-YYYY'}}</h2>
+  <h2>{{currentDate | date : 'short'}}</h2>
+  <h2>{{currentDate | date : 'medium'}}</h2>
+  <h2>{{currentDate | date : 'long'}}</h2>
+  <h2>{{currentDate | date : 'full'}}</h2>
+</div>
+
+<div>
+  <h2>{{cost | currency}}</h2>
+  <h2>{{cost | currency : 'INR'}}</h2>
+  <h2>{{cost | currency : INR}}</h2>
+  <h2>{{cost | currency : 'JPY'}}</h2>
+  <h2>{{cost | currency : JPY}}</h2>
+</div>
+
+<div>
+  <h2>{{temperature | number:'1.8-10'}}</h2>
+  <h2>{{temperature | number:'1.2-5'}}</h2>
+</div>
+
+<div>
+  <h2>{{pizza | json}}</h2>
+  <pre>{{pizza | json}}</pre>
+  <pre><h3>{{pizza | json}}</h3></pre>
+</div>
+<app-post [img]="imgURL" (imgSelected)="logImg($event)"></app-post>
+
+<div>
+  <h3>{{postComponentMessage}}</h3>
+  <pre>{{postComponentMessage}}</pre>
+</div>
+
+<br><br>
 
 <router-outlet></router-outlet>
